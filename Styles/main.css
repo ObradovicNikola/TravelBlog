@@ -1,11 +1,42 @@
-body * {
-    color: hsla(210, 100%, 100%, 0.88);
-    background: hsla(210, 100%, 50%, 0.33);
-    outline: 0.25rem solid hsla(210, 100%, 100%, 0.50);
+body, body * {
+    margin: unset;
+    box-sizing: unset;
+    padding: unset;
+    color: unset;
+    text-decoration: unset;
 }
 
-.debug-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+article {
+    display: grid;
+    grid-template-columns: 1fr 0.5in [start] 1.25in 5in 1.25in [end] 0.5in 1fr;
+
+    padding:  0;
+}
+
+article * {
+    grid-column: start / end;
+}
+
+article h1{
+    font-size: 28px;
+    text-align: center;
+}
+
+article h2{
+    font-size: 22px;
+}
+
+img.size-1, img.size-2, img.size-3, img.size-4 {
+    width: 100%;
+}
+
+.size-1 {grid-column: 4 / 5;}
+.size-2 {grid-column: 3 / 6;}
+.size-3 {grid-column: 2 / 7;}
+.size-4 {grid-column: 1 / 8;}
+
+@media (max-width: 8.5in) {
+    article {
+        grid-template-columns: 1fr 5% [start] 15% 60% 15% [end] 5% 1fr;
+    }
 }
